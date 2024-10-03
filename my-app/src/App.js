@@ -40,7 +40,7 @@ function App() {
 
   function Category(props)
   {
-    return(<div><h1>Category</h1></div>)
+    return(<div><h1>Category</h1>: <h2>{props}</h2></div>)
   }
 
   function Cart()
