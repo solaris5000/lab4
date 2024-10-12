@@ -4,21 +4,21 @@ import React, { useState } from 'react';
 
 function App() {
 
-  class Product {
-    id;
-    name;
-    image;
-    off;
-    catID;
+  // class Product {
+  //   id;
+  //   name;
+  //   image;
+  //   off;
+  //   catID;
 
-    constructor(name, image, off, catrgoryId) {
-      this.id = Products.length();
-      this.name = name;
-      this.image = image;
-      this.off = off;
-      this.catID = catrgoryId;
-    }
-  }
+  //   constructor(name, image, off, catrgoryId) {
+  //     this.id = Products.length();
+  //     this.name = name;
+  //     this.image = image;
+  //     this.off = off;
+  //     this.catID = catrgoryId;
+  //   }
+  // }
 
   class Category {
     name;
