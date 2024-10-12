@@ -73,7 +73,7 @@ function App() {
     return(<div><h1>ProductDetail</h1>:<h2>Props: {props}</h2></div>)
   }
 
-  function Category(props)
+  function CategoryPage(props)
   {
     return(<div><h1>Category</h1>: <h2>{props}</h2></div>)
   }
