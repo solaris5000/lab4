@@ -4,6 +4,41 @@ import React, { useState } from 'react';
 
 function App() {
 
+  class Product {
+    id;
+    name;
+    image;
+    off;
+    catID;
+
+    constructor(name, image, off, catrgoryId) {
+      this.id = Products.length();
+      this.name = name;
+      this.image = image;
+      this.off = off;
+      this.catID = catrgoryId;
+    }
+  }
+
+  class Category {
+    name;
+    catrgoryId = null;
+    products = new Array();
+    constructor(name, products) {
+      this.name = name;
+      this.products = products;
+      this.catrgoryId = Categories.length();
+    }
+  }
+
+  const Categories = new Array(
+    new Category("versace"),
+    new Category("zara"),
+    new Category("gucci"),
+    new Category("prada"),
+    new Category("Calvin Klein"),
+  );
+
   const [content, setContent] = useState('Initial content');
 
   // Step 2: Create a function that updates the content
