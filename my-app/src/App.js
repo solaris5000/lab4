@@ -9,9 +9,8 @@ function App() {
     name;
     catrgoryId = null;
     products = new Array();
-    constructor(name, products) {
+    constructor(name) {
       this.name = name;
-      this.products = products;
       this.catrgoryId = Categories.length();
     }
   }
@@ -24,21 +23,21 @@ function App() {
     new Category("Calvin Klein"),
   );
 
-  class Product {
-    id;
-    name;
-    image;
-    off;
-    catID;
+  // class Product {
+  //   id;
+  //   name;
+  //   image;
+  //   off;
+  //   catID;
 
-    constructor(name, image, off, catrgoryId) {
-      this.id = Products.length();
-      this.name = name;
-      this.image = image;
-      this.off = off;
-      this.catID = catrgoryId;
-    }
-  }
+  //   constructor(name, image, off, catrgoryId) {
+  //     this.id = products.length();
+  //     this.name = name;
+  //     this.image = image;
+  //     this.off = off;
+  //     this.catID = catrgoryId;
+  //   }
+  // }
 
   
 
