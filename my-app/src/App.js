@@ -59,11 +59,11 @@ function App() {
       {
         setContent(
           <div>
-          <button>Categories[0].name</button>
-          <button>Categories[1].name</button>
-          <button>Categories[2].name</button>
-          <button>Categories[3].name</button>
-          <button>Categories[4].name</button>
+          <button>{Categories[0].name}</button>
+          <button>{Categories[1].name}</button>
+          <button>{Categories[2].name}</button>
+          <button>{Categories[3].name}</button>
+          <button>{Categories[4].name}</button>
           </div>
         );
       }
