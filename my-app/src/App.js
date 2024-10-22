@@ -20,16 +20,16 @@ function App() {
   //   }
   // }
 
-  class Category {
-    name;
-    catrgoryId = null;
-    products = new Array();
-    constructor(name, products) {
-      this.name = name;
-      this.products = products;
-      this.catrgoryId = Categories.length();
-    }
-  }
+  // class Category {
+  //   name;
+  //   catrgoryId = null;
+  //   products = new Array();
+  //   constructor(name, products) {
+  //     this.name = name;
+  //     this.products = products;
+  //     this.catrgoryId = Categories.length();
+  //   }
+  // }
 
   const Categories = new Array(
     new Category("versace"),
