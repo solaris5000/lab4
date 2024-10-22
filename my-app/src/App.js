@@ -24,21 +24,48 @@ function App() {
     new Category("Calvin Klein"),
   );
 
-  // class Product {
-  //   id;
-  //   name;
-  //   image;
-  //   off;
-  //   catID;
+  let productsCounter = 0;
+  class Product {
+    id;
+    name; // название продукта
+    price; // цена
+    off; // скидка, в процентах наверное?
+    catID; // id категории, не знаю зачем, но пусть будет
 
-  //   constructor(name, image, off, catrgoryId) {
-  //     this.id = products.length();
-  //     this.name = name;
-  //     this.image = image;
-  //     this.off = off;
-  //     this.catID = catrgoryId;
-  //   }
-  // }
+    
+    constructor(name, price, off, catrgoryId) {
+      this.id = productsCounter++;
+      this.name = name;
+      this.price = price;
+      this.off = off;
+      this.catID = catrgoryId;
+    }
+  }
+
+  // Тут короче будем вписывать продукты
+  Categories[0].products = new Array(
+    new Product("test1", 100, 10, 0),
+    new Product("test2", 100, 10, 0),
+    new Product("test3", 100, 10, 0),
+    new Product("test4", 100, 10, 0),
+    new Product("test5", 100, 10, 0),
+  );
+
+  Categories[1].products = new Array(
+    new Product("test1", 100, 10, 0),
+  );
+
+  Categories[2].products = new Array(
+    new Product("test1", 100, 10, 0),
+  );
+
+  Categories[3].products = new Array(
+    new Product("test1", 100, 10, 0),
+  );
+
+  Categories[4].products = new Array(
+    new Product("test1", 100, 10, 0),
+  );
 
   
 
@@ -59,7 +86,7 @@ function App() {
       {
         setContent(
           <div>
-          <button>{Categories[0].name}</button>
+          <button onClick={() => setContent(ResolveCategory(Categories[0]))}>{Categories[0].name}</button>
           <button>{Categories[1].name}</button>
           <button>{Categories[2].name}</button>
           <button>{Categories[3].name}</button>
@@ -73,6 +100,11 @@ function App() {
       }
     
   };
+
+  function ResolveCategory(param)
+  {
+    <div>{param.products.length}</div>
+  }
 
   function Homepage()
   {
