@@ -105,7 +105,7 @@ function App() {
   {
     let outputstr = "";
     param.products.forEach(function(product, index) {
-      outputstr = outputstr + product.name  + " ; " + product.price + "<br>";
+      outputstr = outputstr + product.name  + " ; " + product.price + " | ";
     })
     return (<div>
     {
