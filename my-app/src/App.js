@@ -4,32 +4,17 @@ import React, { useState } from 'react';
 
 function App() {
 
-  // class Product {
-  //   id;
-  //   name;
-  //   image;
-  //   off;
-  //   catID;
 
-  //   constructor(name, image, off, catrgoryId) {
-  //     this.id = Products.length();
-  //     this.name = name;
-  //     this.image = image;
-  //     this.off = off;
-  //     this.catID = catrgoryId;
-  //   }
-  // }
-
-  // class Category {
-  //   name;
-  //   catrgoryId = null;
-  //   products = new Array();
-  //   constructor(name, products) {
-  //     this.name = name;
-  //     this.products = products;
-  //     this.catrgoryId = Categories.length();
-  //   }
-  // }
+  class Category {
+    name;
+    catrgoryId = null;
+    products = new Array();
+    constructor(name, products) {
+      this.name = name;
+      this.products = products;
+      this.catrgoryId = Categories.length();
+    }
+  }
 
   const Categories = new Array(
     new Category("versace"),
@@ -38,6 +23,24 @@ function App() {
     new Category("prada"),
     new Category("Calvin Klein"),
   );
+
+  class Product {
+    id;
+    name;
+    image;
+    off;
+    catID;
+
+    constructor(name, image, off, catrgoryId) {
+      this.id = Products.length();
+      this.name = name;
+      this.image = image;
+      this.off = off;
+      this.catID = catrgoryId;
+    }
+  }
+
+  
 
   const [content, setContent] = useState('Initial content');
 
