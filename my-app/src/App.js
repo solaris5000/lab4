@@ -4,6 +4,13 @@ import React, { useState } from 'react';
 
 function App() {
 
+  const Categories = new Array(
+    new Category("versace"),
+    new Category("zara"),
+    new Category("gucci"),
+    new Category("prada"),
+    new Category("Calvin Klein"),
+  );
 
   class Category {
     name;
@@ -14,14 +21,6 @@ function App() {
       this.catrgoryId = Categories.length();
     }
   }
-
-  const Categories = new Array(
-    new Category("versace"),
-    new Category("zara"),
-    new Category("gucci"),
-    new Category("prada"),
-    new Category("Calvin Klein"),
-  );
 
   // class Product {
   //   id;
