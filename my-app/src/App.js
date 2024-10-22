@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 function App() {
 
-  Categories = []
+  Categories = new Array();
 
   class Category {
     name;
