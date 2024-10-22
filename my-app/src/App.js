@@ -103,7 +103,7 @@ function App() {
 
   function ResolveCategory(param)
   {
-    let outputstr;
+    let outputstr = "";
     param.products.forEach(function(product, index) {
       outputstr = outputstr + product.name  + " ; " + product.price + "<br>";
     })
