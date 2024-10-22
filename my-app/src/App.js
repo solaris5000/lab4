@@ -57,7 +57,7 @@ function App() {
       }
     if (variable[0] === 'category')
       {
-        setContent(Category(variable[1]));
+        setContent(Categories[1]);
       }
     if (variable[0] === 'cart')
       {
