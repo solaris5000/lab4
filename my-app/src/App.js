@@ -87,10 +87,10 @@ function App() {
         setContent(
           <div>
           <button onClick={() => setContent(ResolveCategory(Categories[0]))}>{Categories[0].name}</button>
-          <button>{Categories[1].name}</button>
-          <button>{Categories[2].name}</button>
-          <button>{Categories[3].name}</button>
-          <button>{Categories[4].name}</button>
+          <button onClick={() => setContent(ResolveCategory(Categories[1]))}>{Categories[1].name}</button>
+          <button onClick={() => setContent(ResolveCategory(Categories[2]))}>{Categories[2].name}</button>
+          <button onClick={() => setContent(ResolveCategory(Categories[3]))}>{Categories[3].name}</button>
+          <button onClick={() => setContent(ResolveCategory(Categories[4]))}>{Categories[4].name}</button>
           </div>
         );
       }
@@ -103,7 +103,7 @@ function App() {
 
   function ResolveCategory(param)
   {
-    <div>{param.products.length}</div>
+    <div>{param.name}</div>
   }
 
   function Homepage()
