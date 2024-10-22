@@ -12,7 +12,7 @@ function App() {
     products = new Array();
     constructor(name) {
       this.name = name;
-      this.catrgoryId = Categories.length();
+      this.catrgoryId = Categories.length;
     }
   }
 
