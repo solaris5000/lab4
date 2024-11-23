@@ -105,13 +105,14 @@ function App() {
       }
     if (variable[0] === 'category')
       {
+        console.log(variable);
         switch (Categories[0])
         {
           case "versache":  setContent(ResolveCategory(Categories[0]));
-          case "zara": setContent(ResolveCategory(Categories[0]));
-          case "gucci":  setContent(ResolveCategory(Categories[0]));
-          case "prada": setContent(ResolveCategory(Categories[0])); 
-          case "calvinklein":  setContent(ResolveCategory(Categories[0]));
+          case "zara": setContent(ResolveCategory(Categories[1]));
+          case "gucci":  setContent(ResolveCategory(Categories[2]));
+          case "prada": setContent(ResolveCategory(Categories[3])); 
+          case "calvinklein":  setContent(ResolveCategory(Categories[4]));
         }
       }
     if (variable[0] === 'cart')
