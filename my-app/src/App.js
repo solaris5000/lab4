@@ -137,7 +137,7 @@ function App() {
 
   function Homepage() {
     return (
-      <div>
+      <div className="hero-content">
         <div className="hero-text">
               <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
               <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
@@ -206,9 +206,7 @@ function App() {
         </div>
 
         <section className="hero-section">
-          <div className="hero-content">
-          {content}
-          </div>
+        {content}
         </section>
 
         <div className="brands">
