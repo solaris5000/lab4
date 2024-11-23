@@ -160,7 +160,14 @@ function App() {
             <div className="hero-image">
               <img src="https://img.freepik.com/free-photo/trendy-fashionable-couple-posing_155003-3401.jpg?t=st=1729841561~exp=1729845161~hmac=4ea2d65b5ac80eae4d7c8a72c421173ebdb9858fd046a1b0d095e405e3e5217b&w=740" alt="Fashion Models" />
             </div>
-          </div>
+            <div className="brands">
+          <a onClick={() => changeContent('category:versace')}> <VersaceIcon /> </a>
+          <a onClick={() => changeContent('category:zara')}> <ZaraIcon /> </a>
+          <a onClick={() => changeContent('category:gucci')}> <GucciIcon /> </a>
+          <a onClick={() => changeContent('category:prada')}> <PradaIcon /> </a>
+          <a onClick={() => changeContent('category:calvinklein')}> <CelvinIcon /> </a>
+        </div>
+        </div>
     );
 }
 
@@ -208,14 +215,6 @@ function App() {
         <section className="hero-section">
         {content}
         </section>
-
-        <div className="brands">
-          <a onClick={() => changeContent('category:versace')}> <VersaceIcon /> </a>
-          <a onClick={() => changeContent('category:zara')}> <ZaraIcon /> </a>
-          <a onClick={() => changeContent('category:gucci')}> <GucciIcon /> </a>
-          <a onClick={() => changeContent('category:prada')}> <PradaIcon /> </a>
-          <a onClick={() => changeContent('category:calvinklein')}> <CelvinIcon /> </a>
-        </div>
       </div>
     </div>
   );
