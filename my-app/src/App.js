@@ -188,11 +188,11 @@ const SignUpLine = () => {
         </section>
 
         <div className="brands">
-          <VersaceIcon />
-          <ZaraIcon />
-          <GucciIcon />
-          <PradaIcon />
-          <CelvinIcon />
+          <VersaceIcon onClick={() => changeContent('category:versace')} />
+          <ZaraIcon onClick={() => changeContent('category:zara')}/>
+          <GucciIcon onClick={() => changeContent('category:gucci')}/>
+          <PradaIcon onClick={() => changeContent('category:prada')}/>
+          <CelvinIcon onClick={() => changeContent('category:calvinklein')}/>
         </div>
       </div>
     );
@@ -218,15 +218,18 @@ const SignUpLine = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="ConetContaiver">{content}</div>
+    </div>
+  );
+}
+
+/*
+<header className="App-header">
         <button onClick={() => changeContent('homepage')}>Homepage</button>
         <button onClick={() => changeContent('product:0')}>Product Detail</button>
         <button onClick={() => changeContent('category:null')}>Category</button>
         <button onClick={() => changeContent('cart')}>Cart</button>
       </header>
-      <div className="ConetContaiver">{content}</div>
-    </div>
-  );
-}
+*/
 
 export default App;
