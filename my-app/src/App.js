@@ -140,6 +140,7 @@ const SignUpLine = () => {
   function Homepage() {
     return (
       <div>
+        setIsVisible(true);
         <SignUpLine />
 
         <div className="nav-bar">
