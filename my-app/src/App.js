@@ -105,15 +105,14 @@ function App() {
       }
     if (variable[0] === 'category')
       {
-        setContent(
-          <div>
-          <button onClick={() => setContent(ResolveCategory(Categories[0]))}>{Categories[0].name}</button>
-          <button onClick={() => setContent(ResolveCategory(Categories[1]))}>{Categories[1].name}</button>
-          <button onClick={() => setContent(ResolveCategory(Categories[2]))}>{Categories[2].name}</button>
-          <button onClick={() => setContent(ResolveCategory(Categories[3]))}>{Categories[3].name}</button>
-          <button onClick={() => setContent(ResolveCategory(Categories[4]))}>{Categories[4].name}</button>
-          </div>
-        );
+        switch (Categories[0])
+        {
+          case "versache":  setContent(ResolveCategory(Categories[0]));
+          case "zara": setContent(ResolveCategory(Categories[0]));
+          case "gucci":  setContent(ResolveCategory(Categories[0]));
+          case "prada": setContent(ResolveCategory(Categories[0])); 
+          case "calvinklein":  setContent(ResolveCategory(Categories[0]));
+        }
       }
     if (variable[0] === 'cart')
       {
