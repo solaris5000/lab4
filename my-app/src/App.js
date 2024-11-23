@@ -188,11 +188,11 @@ const SignUpLine = () => {
         </section>
 
         <div className="brands">
-          <VersaceIcon  />
-          <ZaraIcon />
-          <GucciIcon />
-          <PradaIcon />
-          <CelvinIcon />
+          <VersaceIcon onClick={() => changeContent('category:versace')} />
+          <ZaraIcon onClick={() => changeContent('category:zara')}/>
+          <GucciIcon onClick={() => changeContent('category:gucci')}/>
+          <PradaIcon onClick={() => changeContent('category:prada')}/>
+          <CelvinIcon onClick={() => changeContent('category:calvinklein')}/>
         </div>
       </div>
     );
