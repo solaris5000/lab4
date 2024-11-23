@@ -105,8 +105,7 @@ function App() {
       }
     if (variable[0] === 'category')
       {
-        console.log(variable);
-        switch (Categories[0])
+        switch (variable[1])
         {
           case "versache":  setContent(ResolveCategory(Categories[0]));
           case "zara": setContent(ResolveCategory(Categories[1]));
