@@ -174,7 +174,45 @@ function App() {
     );
 }
 
-  
+  function Footer()
+  {
+    return(
+      <div className="Footer">
+        <div className="FooterContainer">
+          <div className="logo"><a onClick={() => changeContent("homepage")}>SHOP.CO</a></div>
+          <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+        </div>
+        <div className="FooterContainer">
+          <h2>COMPANY</h2>
+          <a>About</a>
+          <a>Features</a>
+          <a>Works</a>
+          <a>Career</a>
+        </div>
+        <div className="FooterContainer">
+          <h2>HELP</h2>
+          <a>Customer Support</a>
+          <a>Delivery Details</a>
+          <a>Terms & Conditions</a>
+          <a>Privacy Policy</a>
+        </div>
+        <div className="FooterContainer">
+          <h2>FAQ</h2>
+          <a>Account</a>
+          <a>Manage Deliveries</a>
+          <a>Orders</a>
+          <a>Payments</a>
+        </div>
+        <div className="FooterContainer">
+          <h2>RESOURCES</h2>
+          <a>Free eBooks</a>
+          <a>Development Tutorial</a>
+          <a>How to - Blog</a>
+          <a>Youtube Playlist</a>
+        </div>
+      </div>
+    );
+  }
   
 
   function ProductDetail(props)
@@ -218,6 +256,8 @@ function App() {
         <section className="hero-section">
         {content}
         </section>
+
+        <Footer />
       </div>
     </div>
   );

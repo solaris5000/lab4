@@ -235,3 +235,14 @@
   gap: 106px;
   padding: 43px;
 }
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.FooterContainer {
+  flex: 1; 
+  margin: 0 10px;
+}
