@@ -68,7 +68,27 @@ function App() {
     new Product("test1", 100, 10, 0),
   );
 
+  const SignUpLine = () => {
+    const [isVisible, setIsVisible] = useState(true);
   
+    const handleClose = () => {
+      setIsVisible(false); // Устанавливаем состояние в false для скрытия
+    };
+  
+    if (!isVisible) return null; // Если не видно, ничего не рендерим
+  
+    return (
+      <div className="signUpLine">
+        <div className="startline">
+          Sign up and get 20% off your first order. 
+          <a href="https://example.com/signup" className="startline-url">Sign Up Now</a>
+        </div>
+        <div className="close-icon" onClick={handleClose}>
+          <CloseIcon />
+        </div>
+      </div>
+    );
+  };
 
   const [content, setContent] = useState(Homepage());
 
@@ -102,28 +122,6 @@ function App() {
     
   };
 
-const SignUpLine = () => {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const handleClose = () => {
-    setIsVisible(false); // Устанавливаем состояние в false для скрытия
-  };
-
-  if (!isVisible) return null; // Если не видно, ничего не рендерим
-
-  return (
-    <div className="signUpLine">
-      <div className="startline">
-        Sign up and get 20% off your first order. 
-        <a href="https://example.com/signup" className="startline-url">Sign Up Now</a>
-      </div>
-      <div className="close-icon" onClick={handleClose}>
-        <CloseIcon />
-      </div>
-    </div>
-  );
-};
-
   function ResolveCategory(param)
   {
     let outputstr = "";
@@ -140,7 +138,6 @@ const SignUpLine = () => {
   function Homepage() {
     return (
       <div>
-        setIsVisible(true);
         <SignUpLine />
 
         <div className="nav-bar">
