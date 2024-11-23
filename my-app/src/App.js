@@ -188,7 +188,7 @@ function App() {
         <SignUpLine />
 
         <div className="nav-bar">
-          <div className="logo"><a onClick={() => changeContent(Homepage())}>SHOP.CO</a></div>
+          <div className="logo"><a onClick={() => changeContent("homepage")}>SHOP.CO</a></div>
           <ul>
             <li>Shop<ListIcon /></li>
             <li><a href="https://example.com/">On Sale</a></li>
