@@ -186,11 +186,11 @@ function App() {
         </section>
 
         <div className="brands">
-          <VersaceIcon onClick={() => changeContent('category:versace')} />
-          <ZaraIcon onClick={() => changeContent('category:zara')}/>
-          <GucciIcon onClick={() => changeContent('category:gucci')}/>
-          <PradaIcon onClick={() => changeContent('category:prada')}/>
-          <CelvinIcon onClick={() => changeContent('category:calvinklein')}/>
+          <a onClick={() => changeContent('category:versace')}> <VersaceIcon /> </a>
+          <a onClick={() => changeContent('category:zara')}> <ZaraIcon /> </a>
+          <a onClick={() => changeContent('category:gucci')}> <GucciIcon /> </a>
+          <a onClick={() => changeContent('category:prada')}> <PradaIcon /> </a>
+          <a onClick={() => changeContent('category:calvinklein')}> <CelvinIcon /> </a>
         </div>
       </div>
     );
