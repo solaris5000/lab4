@@ -70,7 +70,7 @@ function App() {
 
   
 
-  const [content, setContent] = useState('Initial content');
+  const [content, setContent] = useState(Homepage());
 
   // Step 2: Create a function that updates the content
   const changeContent = (param) => {
@@ -188,11 +188,11 @@ const SignUpLine = () => {
         </section>
 
         <div className="brands">
-          <VersaceIcon onClick={() => changeContent('category:versace')} />
-          <ZaraIcon onClick={() => changeContent('category:zara')}/>
-          <GucciIcon onClick={() => changeContent('category:gucci')}/>
-          <PradaIcon onClick={() => changeContent('category:prada')}/>
-          <CelvinIcon onClick={() => changeContent('category:calvinklein')}/>
+          <VersaceIcon  />
+          <ZaraIcon />
+          <GucciIcon />
+          <PradaIcon />
+          <CelvinIcon />
         </div>
       </div>
     );
