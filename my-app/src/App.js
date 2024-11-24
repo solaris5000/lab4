@@ -111,11 +111,11 @@ function App() {
       {
         switch (variable[1])
         {
-          case "versace":  setContent(ResolveCategory(Categories[0]));
-          case "zara": setContent(ResolveCategory(Categories[1]));
-          case "gucci":  setContent(ResolveCategory(Categories[2]));
-          case "prada": setContent(ResolveCategory(Categories[3])); 
-          case "calvinklein":  setContent(ResolveCategory(Categories[4]));
+          case "versace":  setContent(ResolveCategory(Categories[0])); break;
+          case "zara": setContent(ResolveCategory(Categories[1])); break;
+          case "gucci":  setContent(ResolveCategory(Categories[2])); break;
+          case "prada": setContent(ResolveCategory(Categories[3])); break;
+          case "calvinklein":  setContent(ResolveCategory(Categories[4])); break;
         }
       }
     if (variable[0] === 'cart')
