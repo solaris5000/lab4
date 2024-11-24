@@ -130,15 +130,15 @@ function App() {
     console.log("Resolve cat input: ", param);
     let outputstr = "";
     param.products.forEach(function(product, index) 
-    {
+    {product
       console.log(product);
       outputstr += `<div className="productPreview">
-        <img src="${product.link}" alt="Image unaviable"></img>
+        <img src="${product.link}" alt="Image unaviable" onClick=${() => changeContent('product:{'+product+'}')}></img>
         <h2>${product.name}</h2>
         ${
           product.off > 0
           ? `<p><s>${product.price}</s></p>
-              <p className="offPrice">${(product.price * (1-product.off)).toFixed(2)}</p>`
+              <p className="offPrice">${(product.price * ((100-product.off)/100)).toFixed(2)}</p>`
           : `<p>${product.price}</p>`
         }
         <p>
@@ -242,7 +242,22 @@ function App() {
 
   function ProductDetail(props)
   {
-    return(<div><h1>ProductDetail</h1>:<h2>Props: {props}</h2></div>)
+    product = props;
+    return(
+      `<div className="productView">
+        <img src="${product.link}" alt="Image unaviable"></img>
+        <h2>${product.name}</h2>
+        ${
+          product.off > 0
+          ? `<p><s>${product.price}</s></p>
+              <p className="offPrice">${(product.price * ((100-product.off)/100)).toFixed(2)}</p>`
+          : `<p>${product.price}</p>`
+        }
+        <p>
+          product.price
+        </p>
+      </div>`
+  )
   }
 
   function CategoryPage(props)
