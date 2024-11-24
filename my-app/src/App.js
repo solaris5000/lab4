@@ -6,6 +6,7 @@ import { CloseIcon, CartIcon, ProfileIcon, ListIcon, SearchIcon, VersaceIcon, Za
 function App() {
 
   let Categories = [];
+  let _Products = [];
 
   class Category {
     name;
@@ -42,6 +43,7 @@ function App() {
       this.off = off;
       this.catID = catrgoryId;
       this.link = imglink;
+      _Products.push(this);
     }
   }
 
@@ -244,7 +246,7 @@ function App() {
 
   function ProductDetail(props)
   {
-    let product = props;
+    let product = _Products[props];
     return(
       <div className="productView">
         <img src="${product.link}" alt="Image unaviable"></img>
