@@ -146,10 +146,8 @@ function App() {
     })
 
     console.log(outputstr);
-    return (
-    {      
-      outputstr
-    }
+    return (    
+      <div dangerouslySetInnerHTML={{ __html: outputstr }} />
     );
   }
 
