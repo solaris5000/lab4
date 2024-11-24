@@ -248,8 +248,8 @@ function App() {
     return(
       <div className="productView">
         <img src="${product.link}" alt="Image unaviable"></img>
-        <h2>${product.name}</h2>
-        ${
+        <h2>{product.name}</h2>
+        {
           product.off > 0
           ? `<p><s>${product.price}</s></p>
               <p className="offPrice">${(product.price * ((100-product.off)/100)).toFixed(2)}</p>`
