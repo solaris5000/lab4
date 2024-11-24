@@ -130,7 +130,7 @@ function App() {
     console.log("Resolve cat input: ", param);
     let outputstr = "";
     param.products.forEach(function(product, index) 
-    {product
+    {
       console.log(product);
       outputstr += `<div className="productPreview">
         <img src="${product.link}" alt="Image unaviable" onClick=${() => changeContent('product:{'+product+'}')}></img>
