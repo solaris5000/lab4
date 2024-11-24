@@ -47,7 +47,7 @@ function App() {
 
   // Тут короче будем вписывать продукты
   Categories[0].products = [
-    new Product("test1", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
+    new Product("Cat0_Test", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
     new Product("test2", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
     new Product("test3", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
     new Product("test4", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
@@ -55,19 +55,19 @@ function App() {
   ];
 
   Categories[1].products = new Array(
-    new Product("test1", 100, 10, 0),
+    new Product("Cat1_Test", 100, 10, 0),
   );
 
   Categories[2].products = new Array(
-    new Product("test1", 100, 10, 0),
+    new Product("Cat2_Test", 100, 10, 0),
   );
 
   Categories[3].products = new Array(
-    new Product("test1", 100, 10, 0),
+    new Product("Cat4_Test", 100, 10, 0),
   );
 
   Categories[4].products = new Array(
-    new Product("test1", 100, 10, 0),
+    new Product("Cat5_Test", 100, 10, 0),
   );
 
   const SignUpLine = () => {
@@ -128,7 +128,8 @@ function App() {
   function ResolveCategory(param)
   {
     let outputstr = "";
-    param.products.forEach(function(product, index) {
+    param.products.forEach(function(product, index) 
+    {
       console.log(product);
       outputstr += `<div className="productPreview">
         <img src="${product.link}" alt="Image unaviable"></img>
@@ -143,7 +144,8 @@ function App() {
           product.price
         </p>
       </div>`
-    })
+    }
+  )
 
     console.log(outputstr);
     return (    
