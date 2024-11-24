@@ -129,6 +129,7 @@ function App() {
   {
     let outputstr = "";
     param.products.forEach(function(product, index) {
+      console.log(product);
       outputstr += `<div className="productPreview">
         <img src="${product.link}" alt="Image unaviable"></img>
         <h2>${product.name}</h2>
