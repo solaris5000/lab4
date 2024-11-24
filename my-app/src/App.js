@@ -127,6 +127,7 @@ function App() {
 
   function ResolveCategory(param)
   {
+    console.log("Resolve cat input: ", param);
     let outputstr = "";
     param.products.forEach(function(product, index) 
     {
