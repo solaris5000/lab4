@@ -246,7 +246,7 @@ function App() {
   {
     let product = props;
     return(
-      `<div className="productView">
+      <div className="productView">
         <img src="${product.link}" alt="Image unaviable"></img>
         <h2>${product.name}</h2>
         ${
@@ -258,7 +258,7 @@ function App() {
         <p>
           product.price
         </p>
-      </div>`
+      </div>
     );
   }
 
