@@ -242,7 +242,7 @@ function App() {
 
   function ProductDetail(props)
   {
-    product = props;
+    let product = props;
     return(
       `<div className="productView">
         <img src="${product.link}" alt="Image unaviable"></img>
