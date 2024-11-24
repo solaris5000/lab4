@@ -133,7 +133,7 @@ function App() {
     {
       console.log(product);
       outputstr += `<div className="productPreview">
-        <img src="${product.link}" alt="Image unaviable" onClick=${() => changeContent('product:{'+product+'}')}></img>
+        <img src="${product.link}" alt="Image unaviable" onClick=${() => changeContent('product:${product.id}')}></img>
         <h2>${product.name}</h2>
         ${
           product.off > 0
@@ -257,7 +257,7 @@ function App() {
           product.price
         </p>
       </div>`
-  )
+    );
   }
 
   function CategoryPage(props)
