@@ -47,11 +47,11 @@ function App() {
 
   // Тут короче будем вписывать продукты
   Categories[0].products = [
-    new Product("Cat0_Test", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
-    new Product("test2", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
-    new Product("test3", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
-    new Product("test4", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
-    new Product("test5", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
+    new Product("Cat0_Test", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
+    new Product("test2", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
+    new Product("test3", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
+    new Product("test4", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
+    new Product("test5", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
   ];
 
   Categories[1].products = new Array(
