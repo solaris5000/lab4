@@ -99,6 +99,7 @@ function App() {
   // Step 2: Create a function that updates the content
   const changeContent = (param) => {
     var variable = param.split(':');
+    console.log("changeContent param: "+variable);
     if (variable[0] === 'homepage')
       {
         setContent(Homepage());
@@ -127,13 +128,14 @@ function App() {
 
   function ResolveCategory(param)
   {
-    console.log("Resolve cat input: ", param);
     let outputstr = "";
     param.products.forEach(function(product, index) 
     {
-      console.log(product);
       outputstr += `<div className="productPreview">
-        <img src="${product.link}" alt="Image unaviable" onClick=${() => changeContent('product:${product.id}')}></img>
+        <img src="${product.link}" 
+        alt="Image unaviable" 
+        onClick="${() => changeContent('product:'+product.id)}">
+        </img>
         <h2>${product.name}</h2>
         ${
           product.off > 0
@@ -147,8 +149,6 @@ function App() {
       </div>`
     }
   )
-
-    console.log(outputstr);
     return (    
       <div dangerouslySetInnerHTML={{ __html: outputstr }} />
     );
