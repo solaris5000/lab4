@@ -129,7 +129,7 @@ function App() {
   {
     let outputstr = "";
     param.products.forEach(function(product, index) {
-      outputstr = outputstr + <div className="productPreview">
+      outputstr += `<div className="productPreview">
         <img src="${product.link}" alt="Image unaviable"></img>
         <h2>${product.name}</h2>
         ${
@@ -141,7 +141,7 @@ function App() {
         <p>
           product.price
         </p>
-      </div>
+      </div>`
     })
     return (
     {
