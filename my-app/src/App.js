@@ -126,33 +126,35 @@ function App() {
     
   };
 
-  function ResolveCategory(param)
-  {
-    let outputstr = "";
-    param.products.forEach(function(product, index) 
-    {
-      outputstr += `<div className="productPreview">
-        <img src="${product.link}" 
-        alt="Image unaviable" 
-        onClick="changeContent('product:${product.id}')">
-        </img>
-        <h2>${product.name}</h2>
-        ${
-          product.off > 0
-          ? `<p><s>${product.price}</s></p>
-              <p className="offPrice">${(product.price * ((100-product.off)/100)).toFixed(2)}</p>`
-          : `<p>${product.price}</p>`
-        }
-        <p>
-          product.price
-        </p>
-      </div>`
-    }
-  )
-    return (    
-      <div dangerouslySetInnerHTML={{ __html: outputstr }} />
+  function ResolveCategory(param) {
+    return (
+      <div>
+        {param.products.map((product, index) => (
+          <div className="productPreview" key={index}>
+            <img
+              src={product.link}
+              alt="Image unavailable"
+              onClick={() => changeContent(`product:${product.id}`)}
+            />
+            <h2>{product.name}</h2>
+            {product.off > 0 ? (
+              <>
+                <p>
+                  <s>{product.price}</s>
+                </p>
+                <p className="offPrice">
+                  {(product.price * ((100 - product.off) / 100)).toFixed(2)}
+                </p>
+              </>
+            ) : (
+              <p>{product.price}</p>
+            )}
+          </div>
+        ))}
+      </div>
     );
   }
+  
 
   function Homepage() {
     return (
