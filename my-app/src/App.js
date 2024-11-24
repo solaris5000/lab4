@@ -143,8 +143,10 @@ function App() {
         </p>
       </div>`
     })
+
+    console.log(outputstr);
     return (
-    {
+    {      
       outputstr
     }
     );
