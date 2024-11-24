@@ -32,24 +32,26 @@ function App() {
     price; // цена
     off; // скидка, в процентах наверное?
     catID; // id категории, не знаю зачем, но пусть будет
+    link;
 
     
-    constructor(name, price, off, catrgoryId) {
+    constructor(name, price, off, catrgoryId, imglink) {
       this.id = productsCounter++;
       this.name = name;
       this.price = price;
       this.off = off;
       this.catID = catrgoryId;
+      this.link = imglink;
     }
   }
 
   // Тут короче будем вписывать продукты
   Categories[0].products = [
-    new Product("test1", 100, 10, 0),
-    new Product("test2", 100, 10, 0),
-    new Product("test3", 100, 10, 0),
-    new Product("test4", 100, 10, 0),
-    new Product("test5", 100, 10, 0),
+    new Product("test1", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
+    new Product("test2", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
+    new Product("test3", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
+    new Product("test4", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
+    new Product("test5", 100, 10, 0, "https://imgur.com/a/moJ3l9S"),
   ];
 
   Categories[1].products = new Array(
@@ -90,6 +92,8 @@ function App() {
     );
   };
 
+
+
   const [content, setContent] = useState(Homepage());
 
   // Step 2: Create a function that updates the content
@@ -107,7 +111,7 @@ function App() {
       {
         switch (variable[1])
         {
-          case "versache":  setContent(ResolveCategory(Categories[0]));
+          case "versace":  setContent(ResolveCategory(Categories[0]));
           case "zara": setContent(ResolveCategory(Categories[1]));
           case "gucci":  setContent(ResolveCategory(Categories[2]));
           case "prada": setContent(ResolveCategory(Categories[3])); 
@@ -125,13 +129,25 @@ function App() {
   {
     let outputstr = "";
     param.products.forEach(function(product, index) {
-      outputstr = outputstr + product.name  + " ; " + product.price + " | ";
+      outputstr += <div className="productPreview">
+        <img src="${product.link}" alt="Image unaviable"></img>
+        <h2>${product.name}</h2>
+        ${
+          product.off > 0
+          ? `<p><s>${product.price}</s></p>
+              <p className="offPrice">${(product.price * (1-product.off)).toFixed(2)}</p>`
+          : `<p>${product.price}</p>`
+        }
+        <p>
+          product.price
+        </p>
+      </div>
     })
-    return (<div>
+    return (
     {
       outputstr
     }
-    </div>);
+    );
   }
 
   function Homepage() {
@@ -168,6 +184,12 @@ function App() {
           <a onClick={() => changeContent('category:gucci')}> <GucciIcon /> </a>
           <a onClick={() => changeContent('category:prada')}> <PradaIcon /> </a>
           <a onClick={() => changeContent('category:calvinklein')}> <CelvinIcon /> </a>
+        </div>
+        <div className="recomendationsBlock">
+          New Arrivals
+        </div>
+        <div className="recomendationsBlock">
+          Top Selling
         </div>
         </div>
     );
