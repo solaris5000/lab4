@@ -134,7 +134,7 @@ function App() {
       outputstr += `<div className="productPreview">
         <img src="${product.link}" 
         alt="Image unaviable" 
-        onClick={(bokachan) => changeContent('product:${product.id}')}>
+        onClick="changeContent('product:${product.id}')">
         </img>
         <h2>${product.name}</h2>
         ${
