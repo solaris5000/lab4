@@ -305,7 +305,7 @@ function App() {
             <div className="bigImage">
               <img className="bigImageImage" src={product.links[0]}></img>
             </div>
-            <div>
+            <div className="ProductInfoHolder">
             <div className="productWell">
             <h2>{product.name}</h2>
             <div className="stars"><img src="stars" alt="stars"></img><span>4.5</span>/5</div>
