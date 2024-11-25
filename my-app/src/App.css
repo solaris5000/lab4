@@ -239,7 +239,7 @@
 .Footer {
   align-self: center;
   font-family: 'Satoshi', sans-serif;
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   width: 90%;
 }
@@ -247,4 +247,15 @@
 .FooterContainer {
   flex: 1; 
   margin: 0 10px;
+  display: grid;
+  text-align: -webkit-left;
+}
+
+.FooterContainer p{
+  font-size: 14px;
+}
+
+.FooterContainer h2{
+  font-size: 16px;
+  letter-spacing: 3px;
 }
