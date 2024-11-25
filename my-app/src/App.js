@@ -252,6 +252,7 @@ function App() {
   }
   
     const handleMouseEnter = (link) => {
+      console.log(link);
       const bigImage = document.querySelector('.bigImageImage');
       if (bigImage) {
         bigImage.src = link; 
