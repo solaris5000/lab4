@@ -209,8 +209,6 @@ function App() {
       <div className="Footer">
         <div className="FooterContainer">
           <div className="logo"><a onClick={() => changeContent("homepage")}>SHOP.CO</a></div>
-          <br></br>
-          <br></br>
           <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
         </div>
         <div className="FooterContainer">
