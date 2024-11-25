@@ -268,3 +268,9 @@
   font-weight: bold;
   margin-right: 40px;
 }
+
+.miniImage
+{
+  max-width: 50;
+  max-height: 100;
+}

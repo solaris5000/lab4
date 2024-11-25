@@ -8,6 +8,8 @@ function App() {
   let Categories = [];
   let _Products = [];
 
+  const VariantColours = [1,2,3,4,5,6,7,8,9];
+
   class Category {
     name;
     catrgoryId = null;
@@ -33,23 +35,29 @@ function App() {
     price; // цена
     off; // скидка, в процентах наверное?
     catID; // id категории, не знаю зачем, но пусть будет
-    link;
+    links;
+    description;
+
+    state = {
+      links: [],
+    }
 
     
-    constructor(name, price, off, catrgoryId, imglink) {
+    constructor(name, price, off, catrgoryId, imglinks, description) {
       this.id = productsCounter++;
       this.name = name;
       this.price = price;
       this.off = off;
       this.catID = catrgoryId;
-      this.link = imglink;
+      this.links = imglinks;
+      this.description = description;
       _Products.push(this);
     }
   }
 
   // Тут короче будем вписывать продукты
   Categories[0].products = [
-    new Product("Cat0_Test", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
+    new Product("Cat0_Test", 100, 10, 0, ["https://i.imgur.com/RgZEGin.png", "https://i.imgur.com/RgZEGin.png"]),
     new Product("test2", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
     new Product("test3", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
     new Product("test4", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
@@ -134,7 +142,7 @@ function App() {
         {param.products.map((product, index) => (
           <div className="productPreview" key={index}>
             <img
-              src={product.link}
+              src={product.links[0]}
               alt="Image unavailable"
               onClick={() => changeContent(`product:${product.id}`)}
             />
@@ -243,13 +251,33 @@ function App() {
     );
   }
   
+  const ProductView = ({ product }) => {
+    const handleMouseEnter = (link) => {
+      const bigImage = document.querySelector('.bigImageImage');
+      if (bigImage) {
+        bigImage.src = link; 
+      }
+  };
 
   function ProductDetail(props)
   {
     let product = _Products[props];
     return(
       <div className="productView">
-        <img src={product.link} alt="Image unaviable"></img>
+          <div className="imagesContainer">
+            {product.links.map((link, index) => (
+              <img
+                key={index}
+                className="miniImage"
+                src={link}
+                alt={`Image ${index + 1} unavailable`}
+                onMouseEnter={() => handleMouseEnter(link)}
+              />
+            ))}
+          </div>
+          <div className="bigImage">
+            <img className="bigImageImage" src={product.links[0]}></img>
+          </div>
         <h2>{product.name}</h2>
         {
           product.off > 0
