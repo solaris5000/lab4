@@ -37,13 +37,14 @@ function App() {
     catID; // id категории, не знаю зачем, но пусть будет
     links;
     description;
+    viableColors;
 
     state = {
       links: [],
     }
 
     
-    constructor(name, price, off, catrgoryId, imglinks, description) {
+    constructor(name, price, off, catrgoryId, imglinks, description, viableColors) {
       this.id = productsCounter++;
       this.name = name;
       this.price = price;
@@ -51,13 +52,14 @@ function App() {
       this.catID = catrgoryId;
       this.links = imglinks;
       this.description = description;
+      this.viableColors = viableColors;
       _Products.push(this);
     }
   }
 
   // Тут короче будем вписывать продукты
   Categories[0].products = [
-    new Product("Cat0_Test", 100, 10, 0, ["https://i.imgur.com/RgZEGin.png", "https://i.ytimg.com/vi/G4EcRPlaXoQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAZI3ssU9Kfe756bpZ2HpoMHuSAHw"]),
+    new Product("Cat0_Test", 100, 10, 0, ["https://i.imgur.com/RgZEGin.png", "https://i.ytimg.com/vi/G4EcRPlaXoQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAZI3ssU9Kfe756bpZ2HpoMHuSAHw"], "deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeescription for any purpose cause why not", [1,2,3]),
     new Product("test2", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
     new Product("test3", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
     new Product("test4", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
@@ -251,45 +253,103 @@ function App() {
     );
   }
   
-    const handleMouseEnter = (link) => {
-      console.log(link);
-      const bigImage = document.querySelector('.bigImageImage');
-      if (bigImage) {
-        bigImage.src = link; 
-      }
+  const handleMouseEnter = (link) => {
+    console.log(link);
+    const bigImage = document.querySelector('.bigImageImage');
+    if (bigImage) {
+      bigImage.src = link; 
+    }
   }
+
+  function VeriGoodWritetReviueves()
+  {
+    return(
+    <div>
+      WOW REVIEWS!     
+    </div>
+    );
+  }
+
+  const handleMouseClickUsefullContent = (selector) => {
+    console.log(selector);
+    const contentishe = document.querySelector('.usefullContent');
+    if (contentishe) {
+      switch (selector){
+        case "productDetails": contentishe.innerHTML = <div>detalies</div>;break;
+        case "reviews": contentishe.innerHTML = VeriGoodWritetReviueves();break;
+        case "faqs": contentishe.innerHTML = <div>faqui</div>;break;
+      }
+    }
+  }
+
+  
 
   function ProductDetail(props)
   {
     let product = _Products[props];
     return(
       <div className="productView">
-          <div className="imagesContainer">
-            {product.links.map((link, index) => (
-              <img
-                key={index}
-                className="miniImage"
-                src={link}
-                alt={`Image ${index + 1} unavailable`}
-                onMouseEnter={() => handleMouseEnter(link)}
-              />
-            ))}
-          </div>
-          <div className="bigImage">
-            <img className="bigImageImage" src={product.links[0]}></img>
-          </div>
-        <h2>{product.name}</h2>
-        {
-          product.off > 0
-          ? <>
-              <p><s>${product.price}</s></p>
-              <p className="offPrice">${(product.price * ((100 - product.off) / 100)).toFixed(2)}</p>
-            </>
-          : <p>${product.price}</p>
-        }
-        <p>
-          product.price
-        </p>
+        <div className="navbarCurrent">Home &gt; Shop &gt; Men &gt; <span className="Active">T-shirt</span></div>
+          <div className="productInfo">
+            <div className="imagesContainer">
+              {product.links.map((link, index) => (
+                <img
+                  key={index}
+                  className="miniImage"
+                  src={link}
+                  alt={`Image ${index + 1} unavailable`}
+                  onMouseEnter={() => handleMouseEnter(link)}
+                />
+              ))}
+            </div>
+            <div className="bigImage">
+              <img className="bigImageImage" src={product.links[0]}></img>
+            </div>
+            <div className="productWell">
+            <h2>{product.name}</h2>
+            <div className="stars"><img src="stars" alt="stars"></img><span>4.5</span>/5</div>
+            {
+              product.off > 0
+              ? <>
+                  <p><s>${product.price}</s></p>
+                  <p className="offPrice">${(product.price * ((100 - product.off) / 100)).toFixed(2)}</p>
+                </>
+              : <p>${product.price}</p>
+            }
+            <p>
+              product.price
+            </p>
+            </div>
+            <hr></hr>
+            <div className="productColors">
+              
+              Select Colors
+              {product.viableColors.map((color, index) => (
+                  <p>{color}</p>
+                ))}
+            </div>
+            <hr></hr>
+            <div className="productSizes">
+              Chose productSizes
+              <button>Small</button>
+              <button>Medium</button>
+              <button>Large</button>
+              <button>X-Large</button>
+            </div>
+            <hr></hr>
+            <div className="addToCart">
+              <div className="counter">Counter placeholder</div>
+              <button> ADD TO CART</button>
+            </div>
+        </div>
+
+        <div className="usefullButtons">
+          <div className="productDetails" onClick={() => handleMouseClickUsefullContent("productDetails")} >Product details</div>
+          <div className="reviews" onClick={() => handleMouseClickUsefullContent("reviews")}>Rating & reviews</div>
+          <div className="faqs" onClick={() => handleMouseClickUsefullContent("faqs")}>FAQs</div>
+          <div className="usefullContent"></div>
+        </div>
+          
       </div>
     );
   }
