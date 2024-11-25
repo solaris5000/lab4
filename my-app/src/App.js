@@ -258,6 +258,7 @@ function App() {
         bigImage.src = link; 
       }
   };
+}
 
   function ProductDetail(props)
   {
@@ -346,4 +347,4 @@ function App() {
       </header>
 */
 
-
+export default App;
