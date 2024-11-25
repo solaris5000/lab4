@@ -305,6 +305,7 @@ function App() {
             <div className="bigImage">
               <img className="bigImageImage" src={product.links[0]}></img>
             </div>
+            <div>
             <div className="productWell">
             <h2>{product.name}</h2>
             <div className="stars"><img src="stars" alt="stars"></img><span>4.5</span>/5</div>
@@ -340,6 +341,7 @@ function App() {
             <div className="addToCart">
               <div className="counter">Counter placeholder</div>
               <button> ADD TO CART</button>
+            </div>
             </div>
         </div>
 
