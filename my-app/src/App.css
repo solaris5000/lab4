@@ -270,7 +270,7 @@
 }
 
 .ProductInfoHolder{
-  width: 50%;
+  width: 100%;
 }
 
 .productInfo{
@@ -282,6 +282,16 @@
   height: fit-content;
   width: 50px;
   margin: 10px;
+}
+.bigImage{
+  text-align-last: justify;
+}
+
+.bigImageImage{
+    padding: 10px;
+    max-height: 350px;
+    width: auto;
+    max-width: 100%;
 }
 
 .miniImage
