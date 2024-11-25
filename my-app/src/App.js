@@ -251,14 +251,12 @@ function App() {
     );
   }
   
-  const ProductView = ({ product }) => {
     const handleMouseEnter = (link) => {
       const bigImage = document.querySelector('.bigImageImage');
       if (bigImage) {
         bigImage.src = link; 
       }
-  };
-}
+  }
 
   function ProductDetail(props)
   {
