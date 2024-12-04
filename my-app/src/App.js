@@ -328,6 +328,7 @@ function App() {
   function ProductDetail(props)
   {
     let product = _Products[props];
+    console.log(product)
     return(
       <div className="productView">
         <div className="navbarCurrent">Home &gt; Shop &gt; Men &gt; <span className="Active">T-shirt</span></div>
@@ -389,7 +390,7 @@ function App() {
             <hr></hr>
             <div className="addToCart">
               <div className="counter">Counter placeholder</div>
-              <button onClick={AddProductToCart()}> ADD TO CART</button>
+              <button onClick={AddProductToCart("")}> ADD TO CART</button>
             </div>
             </div>
         </div>
