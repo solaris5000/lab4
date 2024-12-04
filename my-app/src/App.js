@@ -310,6 +310,16 @@ function App() {
 
   const [itemsCount, setItemsCount] = useState(1); // Индекс активной кнопки
 
+  const selectedButtonIdx = 0;
+  const itemsCountGlobal = 1;
+
+  useEffect(() => {
+    console.log('Updated activeIndex:', activeIndex); // Логируем значение после его обновления
+    console.log('Updated itemsCount:', itemsCount); // Логируем значение после его обновления
+    selectedButtonIdx = activeIndex;
+    itemsCountGlobal = itemsCount;
+  }, [activeIndex, itemsCount]);
+
   const handleButtonIncrease = (index) => {
     let c = parseInt(index,10) + 1;
     if (c > 99)
@@ -333,11 +343,7 @@ function App() {
   const handleButtonClick = (index) => {
     setActiveIndex(parseInt(index,10));
 
-    useEffect(() => {
-      console.log('Updated activeIndex:', activeIndex); // Логируем значение после его обновления
-    }, [activeIndex]);
-    
-    console.log('Active Index:', activeIndex);  // Проверка, меняется ли индекс
+    console.log('Active Index:', selectedButtonIdx);  // Проверка, меняется ли индекс
 
     for (let i = 0; i < buttons.length; i++) {
       const buttonElement = document.getElementById(`button-${i}`);
@@ -428,7 +434,7 @@ function App() {
                 <button className='counterButton' onClick={handleButtonDecrease}>-</button>
               </div>
               <button className="btn-active" style={{ width: '72%', height: '52px' }} onClick={() => {
-                AddProductToCart(`${product.id},${itemsCount},${buttons[activeIndex]}`)}
+                AddProductToCart(`${product.id},${itemsCount},${buttons[selectedButtonIdx]}`)}
                 }> ADD TO CART</button>
             </div>
             </div>
