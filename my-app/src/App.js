@@ -310,8 +310,8 @@ function App() {
 
   const [itemsCount, setItemsCount] = useState(1); // Индекс активной кнопки
 
-  const selectedButtonIdx = 0;
-  const itemsCountGlobal = 1;
+  let selectedButtonIdx = 0;
+  let itemsCountGlobal = 1;
 
   useEffect(() => {
     console.log('Updated activeIndex:', activeIndex); // Логируем значение после его обновления
@@ -320,8 +320,10 @@ function App() {
     itemsCountGlobal = itemsCount;
   }, [activeIndex, itemsCount]);
 
-  const handleButtonIncrease = (index) => {
-    let c = parseInt(index,10) + 1;
+  const handleButtonIncrease = () => {
+    console.log(itemsCountGlobal);
+    let c = 0;
+    c = itemsCountGlobal + 1;
     if (c > 99)
     {
       c = 99;
@@ -330,8 +332,10 @@ function App() {
     setItemsCount(c);
   }
 
-  const handleButtonDecrease = (index) => {
-    let c = parseInt(index,10) - 1;
+  const handleButtonDecrease = () => {
+    console.log(itemsCountGlobal);
+    let c = 0;
+    c = itemsCountGlobal - 1;
     if (c < 1)
     {
       c = 1;
@@ -430,7 +434,7 @@ function App() {
             <div className="addToCart">
               <div className='btn-default counter'>
                 <button className='counterButton' onClick={handleButtonIncrease}>+</button>
-                {itemsCount}
+                {itemsCountGlobal}
                 <button className='counterButton' onClick={handleButtonDecrease}>-</button>
               </div>
               <button className="btn-active" style={{ width: '72%', height: '52px' }} onClick={() => {
