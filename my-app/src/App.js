@@ -301,6 +301,26 @@ function App() {
     };
 
   const [activeIndex, setActiveIndex] = useState(0); // Индекс активной кнопки
+
+  const [itemsCount, setItemsCount] = useState(1); // Индекс активной кнопки
+
+  const handleButtonIncrease = (index) => {
+    let c = index + 1;
+    if (c > 99)
+    {
+      c = 99;
+    }
+    setItemsCount(c);
+  }
+
+  const handleButtonDecrease = (index) => {
+    let c = index - 1;
+    if (c < 1)
+    {
+      c = 1;
+    }
+    setItemsCount(c);
+  }
   
   const handleButtonClick = (index) => {
     setActiveIndex(index);
@@ -389,8 +409,14 @@ function App() {
             </div>
             <hr></hr>
             <div className="addToCart">
-              <div className="counter">Counter placeholder</div>
-              <button onClick={AddProductToCart("")}> ADD TO CART</button>
+              <button className='btn-default counter'>
+                <button className='counterButton' onClick={() => handleButtonIncrease()}>+</button>
+                {itemsCount}
+                <button className='counterButton' onClick={() => handleButtonDecrease()}>-</button>
+              </button>
+              <button className="btn-active" style="width: 500px; height: 52px;" onClick={() => {
+                AddProductToCart(`${product.id},${itemsCount}`)}
+                }> ADD TO CART</button>
             </div>
             </div>
         </div>
