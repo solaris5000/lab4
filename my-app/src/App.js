@@ -308,7 +308,7 @@ function App() {
   const [itemsCount, setItemsCount] = useState(1); // Индекс активной кнопки
 
   const handleButtonIncrease = (index) => {
-    let c = index + 1;
+    let c = parseInt(index,10) + 1;
     if (c > 99)
     {
       c = 99;
@@ -318,7 +318,7 @@ function App() {
   }
 
   const handleButtonDecrease = (index) => {
-    let c = index - 1;
+    let c = parseInt(index,10) - 1;
     if (c < 1)
     {
       c = 1;
@@ -328,8 +328,8 @@ function App() {
   }
   
   const handleButtonClick = (index) => {
-    setActiveIndex(index);
-    console.log('Active Index:', index);  // Проверка, меняется ли индекс
+    setActiveIndex(parseInt(index,10));
+    console.log('Active Index:', activeIndex);  // Проверка, меняется ли индекс
 
     for (let i = 0; i < buttons.length; i++) {
       const buttonElement = document.getElementById(`button-${i}`);
