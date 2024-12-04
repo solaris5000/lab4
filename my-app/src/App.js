@@ -300,8 +300,13 @@ function App() {
       AddProductToCart(props);
     };
 
-  const [activeIndex, setActiveIndex] = useState(null); // Индекс активной кнопки
+  const [activeIndex, setActiveIndex] = useState(0); // Индекс активной кнопки
   
+  const handleButtonClick = (index) => {
+    setActiveIndex(index);
+    console.log('Active Index:', index);  // Проверка, меняется ли индекс
+  };
+
   const buttons = ['S', 'M', 'L', 'XL'];
 
   function ProductDetail(props)
@@ -356,7 +361,7 @@ function App() {
                 {buttons.map((button, index) => (
                   <button
                     key={index}
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => handleButtonClick(index)}
                     className={activeIndex === index ? 'btn-active' : 'btn-default'}
                   >
                     {button}
