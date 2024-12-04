@@ -313,6 +313,7 @@ function App() {
     {
       c = 99;
     }
+    console.log(c);
     setItemsCount(c);
   }
 
@@ -322,6 +323,7 @@ function App() {
     {
       c = 1;
     }
+    console.log(c);
     setItemsCount(c);
   }
   
