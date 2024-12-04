@@ -300,9 +300,7 @@ function App() {
       AddProductToCart(props);
     };
 
-  const ButtonGroup = () => {
-    const [activeIndex, setActiveIndex] = useState(null); // Индекс активной кнопки
-  }
+  const [activeIndex, setActiveIndex] = useState(null); // Индекс активной кнопки
   
   const buttons = ['S', 'M', 'L', 'XL'];
 
