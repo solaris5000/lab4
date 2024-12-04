@@ -305,6 +305,22 @@ function App() {
   const handleButtonClick = (index) => {
     setActiveIndex(index);
     console.log('Active Index:', index);  // Проверка, меняется ли индекс
+
+    for (let i = 0; i < buttons.length; i++) {
+      const buttonElement = document.getElementById(`button-${i}`);
+      if (buttonElement) {
+        // Если индекс не совпадает с нажатым, ставим 'btn-default'
+        if (i !== index) {
+          buttonElement.classList.remove('btn-active');
+          buttonElement.classList.add('btn-default');
+        } else {
+          // Если индекс совпадает с нажатым, ставим 'btn-active'
+          buttonElement.classList.remove('btn-default');
+          buttonElement.classList.add('btn-active');
+        }
+      }
+    }
+    
   };
 
   const buttons = ['S', 'M', 'L', 'XL'];
@@ -360,6 +376,7 @@ function App() {
               <div className="button-group">
                 {buttons.map((button, index) => (
                   <button
+                    id={`button-${index}`}  // Уникальный ID для каждой кнопки
                     key={index}
                     onClick={() => handleButtonClick(index)}
                     className={activeIndex === index ? 'btn-active' : 'btn-default'}
