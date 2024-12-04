@@ -418,7 +418,7 @@ function App() {
                 <button className='counterButton' onClick={handleButtonDecrease}>-</button>
               </div>
               <button className="btn-active" style={{ width: '72%', height: '52px' }} onClick={() => {
-                AddProductToCart(`${product.id},${itemsCount}`)}
+                AddProductToCart(`${product.id},${itemsCount},${buttons[activeIndex]}`)}
                 }> ADD TO CART</button>
             </div>
             </div>
