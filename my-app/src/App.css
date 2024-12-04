@@ -517,7 +517,7 @@ button{
 
 .counter
 {
-  width: 170px;
+  width: 24%;
   height: 52px;
   font-size: 16px;
   display: flex;
@@ -534,4 +534,9 @@ button{
     cursor: pointer;
     font-size: 18px;
     height: 100%;
+}
+
+.addToCart
+{
+  display: flex;
 }
