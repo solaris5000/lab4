@@ -409,11 +409,11 @@ function App() {
             </div>
             <hr></hr>
             <div className="addToCart">
-              <button className='btn-default counter'>
+              <div className='btn-default counter'>
                 <button className='counterButton' onClick={() => handleButtonIncrease()}>+</button>
                 {itemsCount}
                 <button className='counterButton' onClick={() => handleButtonDecrease()}>-</button>
-              </button>
+              </div>
               <button className="btn-active" style={{ width: '500px', height: '52px' }} onClick={() => {
                 AddProductToCart(`${product.id},${itemsCount}`)}
                 }> ADD TO CART</button>

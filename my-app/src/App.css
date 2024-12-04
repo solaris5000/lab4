@@ -335,7 +335,7 @@ button{
 }
 
 .hero-section {
-  background-color: #F2F0F1;
+  /*background-color: #F2F0F1;*/
   width: 100%;
 }
 
@@ -520,10 +520,17 @@ button{
   width: 170px;
   height: 52px;
   font-size: 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .counterButton
 {
-  width: 30%;
-  height: auto;
+    width: 100%;
+    background-color: transparent;
+    border: 0px solid transparent;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    height: 100%;
 }
