@@ -310,11 +310,6 @@ function App() {
 
   const [itemsCount, setItemsCount] = useState(1); // Индекс активной кнопки
 
-  useEffect(() => {
-    console.log('Updated activeIndex:', activeIndex); // Логируем значение после его обновления
-    console.log('Updated activeIndex:', itemsCount); // Логируем значение после его обновления
-  }, [activeIndex, itemsCount]);
-
   const handleButtonIncrease = (index) => {
     let c = parseInt(index,10) + 1;
     if (c > 99)
@@ -337,6 +332,11 @@ function App() {
   
   const handleButtonClick = (index) => {
     setActiveIndex(parseInt(index,10));
+
+    useEffect(() => {
+      console.log('Updated activeIndex:', activeIndex); // Логируем значение после его обновления
+    }, [activeIndex]);
+    
     console.log('Active Index:', activeIndex);  // Проверка, меняется ли индекс
 
     for (let i = 0; i < buttons.length; i++) {
