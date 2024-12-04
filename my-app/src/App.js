@@ -310,20 +310,9 @@ function App() {
 
   const [itemsCount, setItemsCount] = useState(1); // Индекс активной кнопки
 
-  let selectedButtonIdx = 0;
-  let itemsCountGlobal = 1;
-
-  useEffect(() => {
-    console.log('Updated activeIndex:', activeIndex); // Логируем значение после его обновления
-    console.log('Updated itemsCount:', itemsCount); // Логируем значение после его обновления
-    selectedButtonIdx = activeIndex;
-    itemsCountGlobal = itemsCount;
-  }, [activeIndex, itemsCount]);
-
   const handleButtonIncrease = () => {
-    console.log(itemsCountGlobal);
     let c = 0;
-    c = itemsCountGlobal + 1;
+    c = itemsCount + 1;
     if (c > 99)
     {
       c = 99;
@@ -333,9 +322,8 @@ function App() {
   }
 
   const handleButtonDecrease = () => {
-    console.log(itemsCountGlobal);
     let c = 0;
-    c = itemsCountGlobal - 1;
+    c = itemsCount - 1;
     if (c < 1)
     {
       c = 1;
@@ -347,7 +335,7 @@ function App() {
   const handleButtonClick = (index) => {
     setActiveIndex(parseInt(index,10));
 
-    console.log('Active Index:', selectedButtonIdx);  // Проверка, меняется ли индекс
+    console.log('Active Index:', activeIndex);  // Проверка, меняется ли индекс
 
     for (let i = 0; i < buttons.length; i++) {
       const buttonElement = document.getElementById(`button-${i}`);
@@ -434,11 +422,11 @@ function App() {
             <div className="addToCart">
               <div className='btn-default counter'>
                 <button className='counterButton' onClick={handleButtonIncrease}>+</button>
-                {itemsCountGlobal}
+                {itemsCount}
                 <button className='counterButton' onClick={handleButtonDecrease}>-</button>
               </div>
               <button className="btn-active" style={{ width: '72%', height: '52px' }} onClick={() => {
-                AddProductToCart(`${product.id},${itemsCount},${buttons[selectedButtonIdx]}`)}
+                AddProductToCart(`${product.id},${itemsCount},${buttons[activeIndex]}`)}
                 }> ADD TO CART</button>
             </div>
             </div>
