@@ -10,12 +10,15 @@ function App() {
 
   function AddProductToCart(props)
   {
+    console.log("added ", props);
     let currentCart = Cookies.get('cart');
     if (currentCart != '')
     {
       currentCart += ';'
     }
     currentCart += props;
+    console.log(currentCart);
+    Cookies.set('cart', currentCart, { expires: 1, path: '/' });
   }
 
   let Categories = [];
@@ -411,7 +414,7 @@ function App() {
             <div className="addToCart">
               <div className='btn-default counter'>
                 <button className='counterButton' onClick={() => handleButtonIncrease()}>+</button>
-                {itemsCount}
+                {$itemsCount}
                 <button className='counterButton' onClick={() => handleButtonDecrease()}>-</button>
               </div>
               <button className="btn-active" style={{ width: '72%', height: '52px' }} onClick={() => {

@@ -539,4 +539,5 @@ button{
 .addToCart
 {
   display: flex;
+  justify-content: space-between;
 }
