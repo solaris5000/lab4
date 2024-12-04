@@ -176,10 +176,13 @@
        font-style: italic;
 }
 
-
+button{
+  font-family: 'Satoshi-Regular';
+}
 
 .App {
   text-align: center;
+  font-family: 'Satoshi-Regular';
 }
 
 .App-logo {
@@ -473,7 +476,6 @@
 .bigImageImage{
     padding: 10px;
     max-height: 350px;
-    width: 100%;
     max-width: 100%;
 }
 
@@ -488,4 +490,28 @@
   background-color: #aaa;
   display: flex;
   justify-content: space-around;
+}
+
+.button-group
+{
+
+}
+
+.btn-active
+{
+  width: 86px;
+  height: 46px;
+  border-radius: 62px;
+  background: black;
+  color: #F0F0F0;;
+}
+
+.btn-defaul
+{
+  
+  width: 86px;
+  height: 46px;
+  border-radius: 62px;
+  background: #F0F0F0;
+  color: black;
 }

@@ -2,8 +2,21 @@ import './App.css';
 
 import React, { useState } from 'react';
 import { CloseIcon, CartIcon, ProfileIcon, ListIcon, SearchIcon, VersaceIcon, ZaraIcon, GucciIcon, PradaIcon, CelvinIcon } from './svgcontent';
+import Cookies from 'js-cookie';
 
 function App() {
+
+  Cookies.set('cart', '', { expires: 1, path: '/' });
+
+  function AddProductToCart(props)
+  {
+    let currentCart = Cookies.get('cart');
+    if (currentCart != '')
+    {
+      currentCart += ';'
+    }
+    currentCart += props;
+  }
 
   let Categories = [];
   let _Products = [];
@@ -282,7 +295,16 @@ function App() {
     }
   }
 
+
+  const handleAddToCart = (props) => {
+      AddProductToCart(props);
+    };
+
+  const ButtonGroup = () => {
+    const [activeIndex, setActiveIndex] = useState(null); // Индекс активной кнопки
+  }
   
+  const buttons = ['S', 'M', 'L', 'XL'];
 
   function ProductDetail(props)
   {
@@ -332,15 +354,22 @@ function App() {
             <hr></hr>
             <div className="productSizes">
               Chose productSizes
-              <button>Small</button>
-              <button>Medium</button>
-              <button>Large</button>
-              <button>X-Large</button>
+              <div className="button-group">
+                {buttons.map((button, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveIndex(index)}
+                    className={activeIndex === index ? 'btn-active' : 'btn-default'}
+                  >
+                    {button}
+                  </button>
+                ))}
+              </div>
             </div>
             <hr></hr>
             <div className="addToCart">
               <div className="counter">Counter placeholder</div>
-              <button> ADD TO CART</button>
+              <button onClick={AddProductToCart()}> ADD TO CART</button>
             </div>
             </div>
         </div>
