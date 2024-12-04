@@ -454,23 +454,26 @@
 }
 
 .productInfo{
-  display: inline-flex;
+  display: flex;
 }
 
 .imagesContainer{
-  display: grid;
   height: fit-content;
-  width: 50px;
+  width: 20%;
   margin: 10px;
+  text-align-last: right;
+  display: grid;
+  justify-content: end;
 }
 .bigImage{
-  text-align-last: justify;
+  text-align-last: center;
+  width: 100%;
 }
 
 .bigImageImage{
     padding: 10px;
     max-height: 350px;
-    width: auto;
+    width: 100%;
     max-width: 100%;
 }
 
@@ -483,4 +486,6 @@
 .usefullButtons
 {
   background-color: #aaa;
+  display: flex;
+  justify-content: space-around;
 }
