@@ -452,7 +452,8 @@ function App() {
 
   function Cart()
   {
-    return(<div><h1>Cart</h1></div>)
+    console.log(Cookies.get('cart') ? Cookies.get('cart').split(';') : []);
+    return(<div><h1></h1></div>)
   }
 
   return (
@@ -473,7 +474,7 @@ function App() {
             <input type="text" placeholder="Search for products..." />
           </div>
           <div className="icons"> 
-            <CartIcon />
+            <CartIcon onClick={() => changeContent("cart")}/>
             <ProfileIcon />
           </div>
         </div>
