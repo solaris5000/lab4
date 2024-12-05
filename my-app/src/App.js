@@ -450,10 +450,56 @@ function App() {
     return(<div><h1>Category</h1>: <h2>{props}</h2></div>)
   }
 
+  const calculateTotal = () => {
+    return cart.reduce((total, item) => {
+      const [id, count] = item.split(',');
+      const product = _Products[id];
+      if (product) {
+        total += product.price * parseInt(count, 10); // Умножаем цену на количество
+      }
+      return total;
+    }, 0);
+  };
+
   function Cart()
   {
     console.log(Cookies.get('cart') ? Cookies.get('cart').split(';') : []);
-    return(<div><h1></h1></div>)
+    let cart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
+    return(<div>
+      <div>
+        <div className="navbarCurrent">Home &gt; <span className="Active">Cart</span></div>
+        <h1 className="cartName">YOUR CART</h1>
+      </div>
+      <div className="cartInternal">
+        <div className="cartInfo">
+        {
+          cart.length > 0 ? (
+          cart.map((item, index) => {
+            const [id, count, size] = item.split(',');
+            const product = _Products[id];
+
+            return (
+              <div key={index} className="cartItem">
+                <h3>{product.name} (ID: {id})</h3>
+                <p>Количество: {count}</p>
+                <p>Размер: {size}</p>
+                <p>Цена: ${product.price}</p>
+                <p>Общая стоимость: ${product.price * count}</p>
+              </div>
+            );
+          })
+        ) : (
+          <p>Ваша корзина пуста.</p>
+        )
+        }
+        </div>
+        <div className="cartSummary">
+        <h2>Итоговая стоимость:</h2>
+        <p>${totalPrice}</p>
+        </div>
+      </div>
+      
+    </div>)
   }
 
   return (
