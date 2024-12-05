@@ -544,6 +544,7 @@ button{
 
 .countofitems
 {
+  width: 100%;
   border: none;
   background: transparent;
   font-family: 'Satoshi-Regular';
