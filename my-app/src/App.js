@@ -451,6 +451,7 @@ function App() {
   }
 
   const calculateTotal = () => {
+    let cart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
     return cart.reduce((total, item) => {
       const [id, count] = item.split(',');
       const product = _Products[id];
@@ -465,6 +466,7 @@ function App() {
   {
     console.log(Cookies.get('cart') ? Cookies.get('cart').split(';') : []);
     let cart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
+    const totalPrice = calculateTotal();
     return(<div>
       <div>
         <div className="navbarCurrent">Home &gt; <span className="Active">Cart</span></div>
