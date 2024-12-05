@@ -546,7 +546,7 @@ button{
 {
   border: none;
   background: transparent;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Satoshi-Regular';
   font-size: 16px;
   outline: none; /* Убирает фокусное обрамление */
 }
