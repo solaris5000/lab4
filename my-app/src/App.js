@@ -74,7 +74,7 @@ function App() {
 
   // Тут короче будем вписывать продукты
   Categories[0].products = [
-    new Product("Cat0_Test", 2000, 10, 0, "https://i.imgur.com/RgZEGin.png", "deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeescription for any purpose cause why not", [1,2,3]),
+    new Product("Cat0_Test", 2000, 10, 0, ["https://i.imgur.com/RgZEGin.png"], "deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeescription for any purpose cause why not", [1,2,3]),
   ];
 
   Categories[1].products = new Array(
@@ -82,16 +82,16 @@ function App() {
   );
 
   Categories[2].products = new Array(
-    new Product("Polo with Tipping Details", 180, 0, 0, "https://i.imgur.com/N4PAUkC.png"),
+    new Product("Polo with Tipping Details", 180, 0, 0, ["https://i.imgur.com/N4PAUkC.png"]),
   );
 
   Categories[3].products = new Array(
-    new Product("Black Stripped T-Shirt", 100, 0, 0, "https://i.imgur.com/s9eAiIe.png"),
+    new Product("Black Stripped T-Shirt", 100, 0, 0, ["https://i.imgur.com/s9eAiIe.png"]),
   );
 
   Categories[4].products = new Array(
-    new Product("Skinny Fit Jeans", 260, 20, 0, "https://i.imgur.com/KcPJTor.png"),
-    new Product("Checkered Shirt", 100, 10, 0, "https://i.imgur.com/0vxTrrb.png"),
+    new Product("Skinny Fit Jeans", 260, 20, 0, ["https://i.imgur.com/KcPJTor.png"]),
+    new Product("Checkered Shirt", 100, 10, 0, ["https://i.imgur.com/0vxTrrb.png"]),
   );
 
   const SignUpLine = () => {
