@@ -1,13 +1,10 @@
 import './App.css';
 
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import { CloseIcon, CartIcon, ProfileIcon, ListIcon, SearchIcon, VersaceIcon, ZaraIcon, GucciIcon, PradaIcon, CelvinIcon } from './svgcontent';
 import Cookies from 'js-cookie';
 
 function App() {
-
-  Cookies.set('cart', '', { expires: 1, path: '/' });
 
   function AddProductToCart(props) {
     console.log("added ", props);
