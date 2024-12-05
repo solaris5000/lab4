@@ -450,7 +450,7 @@ function App() {
     return(<div><h1>Category</h1>: <h2>{props}</h2></div>)
   }
 
-  const calculateTotal = () => {
+  const calculateTotalWithoutDiscount = () => {
     let cart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
     return cart.reduce((total, item) => {
       const [id, count] = item.split(',');
