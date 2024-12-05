@@ -9,17 +9,18 @@ function App() {
 
   Cookies.set('cart', '', { expires: 1, path: '/' });
 
-  function AddProductToCart(props)
-  {
+  function AddProductToCart(props) {
     console.log("added ", props);
-    let currentCart = Cookies.get('cart');
-    if (currentCart != '')
-    {
-      currentCart += ';'
-    }
-    currentCart += props;
-    console.log(currentCart);
-    Cookies.set('cart', currentCart, { expires: 1, path: '/' });
+  
+    let currentCart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
+  
+    currentCart.push(props);
+  
+    const updatedCart = currentCart.join(';');
+  
+    console.log(updatedCart);
+  
+    Cookies.set('cart', updatedCart, { expires: 1, path: '/' });
   }
 
   let Categories = [];
@@ -426,7 +427,7 @@ function App() {
             <div className="addToCart">
               <div className='btn-default counter'>
                 <button className='counterButton' onClick={handleButtonIncrease}>+</button>
-                <input value="1" id="countofitems"></input>
+                <input value="1" className='countofitems' id="countofitems"></input>
                 <button className='counterButton' onClick={handleButtonDecrease}>-</button>
               </div>
               <button className="btn-active" style={{ width: '72%', height: '52px' }} onClick={() => {

@@ -541,3 +541,12 @@ button{
   display: flex;
   justify-content: space-between;
 }
+
+.countofitems
+{
+  border: none;
+  background: transparent;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 16px;
+  outline: none; /* Убирает фокусное обрамление */
+}
