@@ -13,7 +13,7 @@ function App() {
     console.log("added ", props);
   
     let currentCart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
-  
+    console.log("currentCart ", currentCart);
     currentCart.push(props);
   
     const updatedCart = currentCart.join(';');
