@@ -481,7 +481,7 @@ function App() {
 
   const calculateTotalWithDiscount = () => {
     let totalWithDiscount = 0;
-
+    let cart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
     cart.forEach(item => {
       const [id, count] = item.split(',');
       const product = _Products[id];
