@@ -517,7 +517,7 @@ function App() {
             return (
               <div key={index} className="cartItem">
                   <h3>{product.name} (ID: {id})</h3>
-                  <img className="miniImage" src={product.image}/>
+                  <img className="miniImage" src={product.links[0]} alt={product.name}/>
                   <p>Количество: {count}</p>
                   <p>Размер: {size}</p>
                   <p>Цена: ${product.price}</p>
