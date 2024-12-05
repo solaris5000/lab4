@@ -551,3 +551,25 @@ button{
   font-size: 16px;
   outline: none; /* Убирает фокусное обрамление */
 }
+
+.cartInfo
+{
+  width: 100%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cartInternal
+{
+  display: flex;
+}
+
+.cartSummary
+{
+  width: 100%;
+}

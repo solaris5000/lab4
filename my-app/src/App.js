@@ -462,11 +462,45 @@ function App() {
     }, 0);
   };
 
+  const calculateTotalDiscountPercentage = () => {
+    let totalDiscount = 0;
+    let totalWithoutDiscount = 0;
+    let cart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
+    cart.forEach(item => {
+      const [id, count] = item.split(',');
+      const product = _Products[id];
+      if (product) {
+        totalWithoutDiscount += product.price * parseInt(count, 10);
+        const discountAmount = (product.price * product.off / 100) * parseInt(count, 10);
+        totalDiscount += discountAmount;
+      }
+    });
+
+    return (totalDiscount / totalWithoutDiscount) * 100 || 0;
+  };
+
+  const calculateTotalWithDiscount = () => {
+    let totalWithDiscount = 0;
+
+    cart.forEach(item => {
+      const [id, count] = item.split(',');
+      const product = _Products[id];
+      if (product) {
+        const discountAmount = (product.price * product.off / 100) * parseInt(count, 10);
+        totalWithDiscount += (product.price * parseInt(count, 10)) - discountAmount;
+      }
+    });
+
+    return totalWithDiscount;
+  };
+
   function Cart()
   {
     console.log(Cookies.get('cart') ? Cookies.get('cart').split(';') : []);
     let cart = Cookies.get('cart') ? Cookies.get('cart').split(';') : [];
-    const totalPrice = calculateTotal();
+    const totalWithoutDiscount = calculateTotalWithoutDiscount();
+    const totalDiscountPercentage = calculateTotalDiscountPercentage();
+    const totalWithDiscount = calculateTotalWithDiscount();
     return(<div>
       <div>
         <div className="navbarCurrent">Home &gt; <span className="Active">Cart</span></div>
@@ -482,12 +516,15 @@ function App() {
 
             return (
               <div key={index} className="cartItem">
-                <h3>{product.name} (ID: {id})</h3>
-                <p>Количество: {count}</p>
-                <p>Размер: {size}</p>
-                <p>Цена: ${product.price}</p>
-                <p>Общая стоимость: ${product.price * count}</p>
-              </div>
+                  <h3>{product.name} (ID: {id})</h3>
+                  <image src={product.image}></image>
+                  <p>Количество: {count}</p>
+                  <p>Размер: {size}</p>
+                  <p>Цена: ${product.price}</p>
+                  <p>Скидка: {product.off}%</p>
+                  <p>Общая стоимость без скидки: ${product.price * count}</p>
+                  <p>Стоимость со скидкой: ${((product.price * count) - ((product.price * product.off / 100) * count)).toFixed(2)}</p>
+                </div>
             );
           })
         ) : (
@@ -496,8 +533,10 @@ function App() {
         }
         </div>
         <div className="cartSummary">
-        <h2>Итоговая стоимость:</h2>
-        <p>${totalPrice}</p>
+          <h2>Итоги:</h2>
+          <p>Сумма без скидки: ${totalWithoutDiscount.toFixed(2)}</p>
+          <p>Общий процент скидки: {totalDiscountPercentage.toFixed(2)}%</p>
+          <p>Сумма со скидкой: ${totalWithDiscount.toFixed(2)}</p>
         </div>
       </div>
       
