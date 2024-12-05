@@ -74,27 +74,24 @@ function App() {
 
   // Тут короче будем вписывать продукты
   Categories[0].products = [
-    new Product("Cat0_Test", 100, 10, 0, ["https://i.imgur.com/RgZEGin.png", "https://i.ytimg.com/vi/G4EcRPlaXoQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAZI3ssU9Kfe756bpZ2HpoMHuSAHw"], "deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeescription for any purpose cause why not", [1,2,3]),
-    new Product("test2", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
-    new Product("test3", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
-    new Product("test4", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
-    new Product("test5", 100, 10, 0, "https://i.imgur.com/RgZEGin.png"),
+    new Product("Cat0_Test", 2000, 10, 0, "https://i.imgur.com/RgZEGin.png", "deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeescription for any purpose cause why not", [1,2,3]),
   ];
 
   Categories[1].products = new Array(
-    new Product("Cat1_Test", 100, 10, 0),
+    new Product("One life Graphic T-shirt", 100, 10, 0, ["https://i.imgur.com/yR2eItk.png", "https://i.imgur.com/NheKox1.png", "https://i.imgur.com/kdJjgmA.png"], "deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeescription for any purpose cause why not", [1,2,3]),
   );
 
   Categories[2].products = new Array(
-    new Product("Cat2_Test", 100, 10, 0),
+    new Product("Polo with Tipping Details", 180, 0, 0, "https://i.imgur.com/N4PAUkC.png"),
   );
 
   Categories[3].products = new Array(
-    new Product("Cat4_Test", 100, 10, 0),
+    new Product("Black Stripped T-Shirt", 100, 0, 0, "https://i.imgur.com/s9eAiIe.png"),
   );
 
   Categories[4].products = new Array(
-    new Product("Cat5_Test", 100, 10, 0),
+    new Product("Skinny Fit Jeans", 260, 20, 0, "https://i.imgur.com/KcPJTor.png"),
+    new Product("Checkered Shirt", 100, 10, 0, "https://i.imgur.com/0vxTrrb.png"),
   );
 
   const SignUpLine = () => {
